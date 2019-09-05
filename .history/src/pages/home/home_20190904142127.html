@@ -1,3 +1,10 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
 
 <ion-content padding center text-center>
   <ion-title>App Title</ion-title>
@@ -9,10 +16,8 @@
         <ion-input placeholder="password" type="password" [(ngModel)]="password"></ion-input>
       </ion-item>
   </ion-list>
-
+  
   <button ion-button full (click)="login()">LogIn</button>
 
   <button ion-button full color="light" (click)="onRegister()">Register</button>
-  <br>
-  <a (click)="goRec()">forget password?</a>
 </ion-content>

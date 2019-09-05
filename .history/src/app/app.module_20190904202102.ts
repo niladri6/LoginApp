@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AuthProvider } from '../providers/auth/auth';
 import { HttpClientModule } from '@angular/common/http';
 import { RecoveryPage } from '../pages/recovery/recovery';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { RecoveryPage } from '../pages/recovery/recovery';
     ReactiveFormsModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
+    AppRoutingModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

@@ -1,0 +1,151 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Registration Form
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="6" offset-md="3">
+        <ion-card>
+          <ion-card-header>
+            Student Details
+          </ion-card-header>
+          <ion-card-content>
+            <ion-item>
+              <ion-input type="text" placeholder="Student Name" [(ngModel)]="name"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input type="email" placeholder="Enter Email" [(ngModel)]="email"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Mobile No</ion-label>
+              <ion-input type="number" placeholder="ex: 9876543210" maxlength="10" [(ngModel)]="mobo"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>hobby</ion-label>
+              <ion-list>
+                <ion-checkbox>dance</ion-checkbox>
+                <ion-checkbox>singing</ion-checkbox>
+              </ion-list>
+            </ion-item>
+            <ion-item>
+              <ion-icon name="calendar"></ion-icon>
+              <ion-label>Date Of Birth</ion-label>
+              <ion-datetime displayFormat="MM DD YY" placeholder="Select Date"></ion-datetime>
+            </ion-item>
+            <ion-item>
+              <ion-list>
+                <ion-radio-group>
+                  <ion-list-header>
+                    <ion-label>gender</ion-label>
+                  </ion-list-header>
+                  <ion-item>
+                    <ion-col>
+                      <ion-item>
+                        <ion-label>Male</ion-label>
+                        <ion-radio slot="start" value="M"></ion-radio>
+                      </ion-item>
+                    </ion-col>
+                    <ion-col>
+                      <ion-item>
+                        <ion-label>Female</ion-label>
+                        <ion-radio slot="start" value="F"></ion-radio>
+                      </ion-item>
+                    </ion-col>
+                  </ion-item>
+                </ion-radio-group>
+              </ion-list>
+            </ion-item>
+
+
+            <ion-item>
+              <ion-input type="text" placeholder="Father/Guardian Name"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>Occupation</ion-label>
+              <ion-select value="self-emp" okText="Okay" cancelText="Dismiss">
+                <ion-select-option value="self-emp">Self-Employed</ion-select-option>
+                <ion-select-option value="job">Job</ion-select-option>
+                <ion-select-option value="business">Business</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item>
+              <ion-input type="text" placeholder="Mother's Name"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>Occupation</ion-label>
+              <ion-select value="self-emp" okText="Okay" cancelText="Dismiss">
+                <ion-select-option value="self-emp">Self-Employed</ion-select-option>
+                <ion-select-option value="job">Job</ion-select-option>
+                <ion-select-option value="business">Business</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item>
+              <ion-label>Annual income</ion-label>
+              <ion-input type="number" placeholder="enter ammount"></ion-input>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+        <!--contact-->
+        <ion-card>
+          <ion-card-header>Contact Details</ion-card-header>
+          <ion-card-content>
+            <ion-item>
+              <ion-label position="floating">Contact Address</ion-label>
+              <ion-textarea rows="3" cols="2" placeholder="Enter address here..." [(ngModel)]="address"></ion-textarea>
+            </ion-item>
+            <ion-item>
+              <ion-input type="email" placeholder="Enter Email" [(ngModel)]="email"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Mobile No</ion-label>
+              <ion-input type="number" placeholder="ex: 9876543210" maxlength="10" [(ngModel)]="mobo"></ion-input>
+            </ion-item>
+
+            <ion-list>
+              <ion-item>
+                <ion-label>State</ion-label>
+                <ion-select placeholder="Select State" (ionChange)="selectedState($event)">
+                  <ion-select-option *ngFor="let state of states" [value]="state">{{state}}</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-list>
+            <ion-list>
+              <ion-item>
+                <ion-label>District</ion-label>
+                <ion-select placeholder="Select District" (ionChange)="selectedDist($event)">
+                  <ion-select-option *ngFor="let dist of district" [value]="dist">{{dist}}</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-list>
+            <ion-item>
+              <ion-input type="text" placeholder="City/town" [(ngModel)]="city"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input type="number" placeholder="postal/zip code"></ion-input>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+
+
+        <div margin-vertical text-right>
+          <ion-button type="submit" fill="solid" color="success" (click)="add()">
+            <ion-icon slot="start" name="checkmark"></ion-icon>submit
+          </ion-button>
+          <ion-button type="clear" fill="outline" color="danger">
+            <ion-icon slot="start" name="close"></ion-icon>Clear
+          </ion-button>
+        </div>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+
+
+</ion-content>

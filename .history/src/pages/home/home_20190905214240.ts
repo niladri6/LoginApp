@@ -1,7 +1,7 @@
-import { Component } from "@angular/core";
+import { Component, ViewChild } from "@angular/core";
+import { NavController } from "ionic-angular";
 import { RegisterPage } from "../register/register";
 import { RecoveryPage } from "../recovery/recovery";
-import { NavController } from "ionic-angular";
 
 @Component({
   selector: "page-home",
@@ -32,8 +32,8 @@ export class HomePage {
   onRegister() {
     this.navCtrl.push(RegisterPage);
   }
-
+  @ViewChild('nav') recover: NavController;
   goRec(){
-    this.navCtrl.push(RecoveryPage);
+    this.recover.push(RecoveryPage);
   }
 }

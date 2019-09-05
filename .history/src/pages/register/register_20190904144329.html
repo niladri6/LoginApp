@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Registration Form
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="6" offset-md="3" offset-sm="1">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Student Details</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            
+            <form (ngSubmit) = "onSubmit()" #f="ngForm">
+                <ion-item>
+                    <ion-input type="text" placeholder="name" [(ngModel)]="user.name"></ion-input>
+                  </ion-item>
+                <ion-item>
+                  <ion-input type="text" placeholder="username" [(ngModel)]="user.username"></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input type="email" placeholder="Enter Email" [(ngModel)]="user.email"></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label position="floating">Mobile No</ion-label>
+                  <ion-input type="number" placeholder="ex: 9876543210" maxlength="10" [(ngModel)]="user.phone"></ion-input>
+                </ion-item>
+                
+                <ion-list radio-group>
+                    <ion-list-header>Gender</ion-list-header>
+                    <ion-item *ngFor="let g of genders">
+                        <ion-label >{{g}}</ion-label>
+                        <ion-radio value={{g}}></ion-radio>
+                    </ion-item>
+                  </ion-list>
+                <ion-item>
+                  <ion-icon name="calendar"></ion-icon>
+                  <ion-label>Date Of Birth</ion-label>
+                  <ion-datetime displayFormat="MM DD YY" placeholder="Select Date" [(ngModel)]="user.dob"></ion-datetime>
+                </ion-item>
+    
+            <div margin-vertical text-right>
+    
+              <button ion-button type="submit" fill="solid" color="success" (click)="onSubmit()">
+                <ion-icon slot="end" name="checkmark"></ion-icon>submit
+              </button>
+    
+              <button ion-button type="clear" fill="outline" color="danger">
+                <ion-icon slot="start" name="close"></ion-icon>Clear
+              </button>
+            </div>
+            </form>
+              

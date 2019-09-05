@@ -7,30 +7,27 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { RegisterPage } from '../pages/register/register';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { AuthProvider } from '../providers/auth/auth';
 import { HttpClientModule } from '@angular/common/http';
-import { RecoveryPage } from '../pages/recovery/recovery';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    RegisterPage,
-    RecoveryPage
+    RegisterPage
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule,
+    FormsModule,
     HttpClientModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    RegisterPage,
-    RecoveryPage
+    RegisterPage
   ],
   providers: [
     StatusBar,

@@ -23,7 +23,7 @@ import { RecoveryPage } from '../pages/recovery/recovery';
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [

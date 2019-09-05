@@ -1,7 +1,6 @@
 import { Component } from "@angular/core";
-import { RegisterPage } from "../register/register";
-import { RecoveryPage } from "../recovery/recovery";
 import { NavController } from "ionic-angular";
+import { RegisterPage } from "../register/register";
 
 @Component({
   selector: "page-home",
@@ -11,7 +10,8 @@ export class HomePage {
   username: any;
   password: any;
 
-  constructor(public navCtrl: NavController) {}
+  constructor(
+    public navCtrl: NavController) {}
 
   login() {
     console.log("username: " + this.username);
@@ -31,9 +31,5 @@ export class HomePage {
 
   onRegister() {
     this.navCtrl.push(RegisterPage);
-  }
-
-  goRec(){
-    this.navCtrl.push(RecoveryPage);
   }
 }
