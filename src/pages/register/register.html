@@ -1,9 +1,9 @@
 <ion-header>
   <ion-navbar color="primary">
     <ion-title>Registration Form</ion-title>
-    <ion-buttons end>
+   <!-- <ion-buttons end>
       <button ion-button (click)="onClose()">Close</button>
-    </ion-buttons>
+    </ion-buttons>-->
   </ion-navbar>
 </ion-header>
 
@@ -16,12 +16,11 @@
             <ion-card-title> Fill up the following fields</ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            
+
             <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
               <div formGroupName="userData">
-                
+
                 <ion-item>
-                    <ion-label position="floating">Name</ion-label>
                   <ion-input type="text" id="name" formControlName="name" placeholder="Enter Name">
                   </ion-input>
                 </ion-item>
@@ -45,34 +44,48 @@
                     <p style="color: red">Please enter a valid email.</p>
                 </ion-item>
 
-              
+
                 <ion-item>
-                  <ion-label position="floating">Mobile No</ion-label>
-                  <ion-input type="number" placeholder="ex: 9876543210" formControlName="phone" ></ion-input>
+                  <ion-input type="number" placeholder="Enter Mobile no. ex: 9876543210" formControlName="phone" ></ion-input>
                 </ion-item>
                 <ion-item *ngIf="!signupForm.get('userData.phone').valid && signupForm.get('userData.phone').touched">
                     <p style="color: red">Please enter a valid phone no.</p>
                 </ion-item>
 
                 <ion-item>
+                  <ion-input type="password" placeholder="password" formControlName="password" #pass></ion-input>
+                </ion-item>
+                <ion-item *ngIf="!signupForm.get('userData.password').valid && signupForm.get('userData.password').touched">
+                  <p style="color: red">Please enter a valid password</p>
+                </ion-item>
+
+                <ion-item>
+                  <ion-input type="password" placeholder="confirm Password" #cpass></ion-input>
+                </ion-item>
+                <ion-item *ngIf="pass.value != cpass.value">
+                  <p style="color: red">password is not same</p>
+                </ion-item>
+
+                <ion-item>
                   <ion-icon name="calendar"></ion-icon>
                   <ion-label>Date Of Birth</ion-label>
-                  <ion-datetime displayFormat="MM DD YY" placeholder="Select Date" formControlName="dob"></ion-datetime>
+                  <!--<ion-calendar formControlName="dob"  markDisabled="markDisabled"></ion-calendar>-->
+                 <ion-datetime displayFormat="MM DD YY" placeholder="Select Date" formControlName="dob" #date></ion-datetime>
                 </ion-item>
-                <ion-item *ngIf="!signupForm.get('userData.dob').valid && signupForm.get('userData.dob').touched">
+                <!--<ion-item *ngIf="date.value >= new Date">
                     <p style="color: red">Please enter a valid date of birth.</p>
-                </ion-item>
+                </ion-item>-->
               <ion-row>
-                  <ion-col>
+                  <!--<ion-col>
                       <div margin-vertical text-left>
                         <button ion-button type="outline" fill="outline" color="primary" navPop>
                           <ion-icon name="backspace"></ion-icon>
                         </button>
                       </div>
-                    </ion-col>
+                    </ion-col>-->
                 <ion-col>
                   <div margin-vertical text-right>
-                    <button ion-button type="submit" fill="solid" color="success" [disabled]="!signupForm.valid" (click)="onSubmit()">
+                    <button ion-button type="submit" fill="solid" color="success" [disabled]="!signupForm.valid"> <!--(click)="onSubmit()"-->
                       <ion-icon slot="end" name="checkmark"></ion-icon>submit
                     </button>
                   </div>

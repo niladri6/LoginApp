@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthProvider } from '../../providers/auth/auth';
-import { HomePage } from '../home/home';
 
 @IonicPage()
 @Component({
@@ -19,7 +18,7 @@ export class RegisterPage implements OnInit {
         'email' : new FormControl(null, [Validators.required, Validators.email]),
         'name' : new FormControl(null, Validators.required),
         'phone' : new FormControl(null, [Validators.maxLength(10), Validators.minLength(10)]),
-        'password' : new FormControl(null),
+        'password' : new FormControl(null, [Validators.required, Validators.minLength(6)]),
         'dob' : new FormControl(null)
       })
       //'gender': new FormControl('male')
@@ -47,6 +46,8 @@ export class RegisterPage implements OnInit {
      this.user.password = this.signupForm.value.password;
      this.user.gender = this.signupForm.value.gender;
      this.user.dob = this.signupForm.value.dob;
+
+     this.onSignUp();
   }
 
   onClose(){
@@ -77,4 +78,5 @@ export class RegisterPage implements OnInit {
   //         console.log('login error : ', error)
   //       });
   // }
+
 }

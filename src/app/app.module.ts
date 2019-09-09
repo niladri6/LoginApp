@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AuthProvider } from '../providers/auth/auth';
 import { HttpClientModule } from '@angular/common/http';
 import { RecoveryPage } from '../pages/recovery/recovery';
+import { CalendarModule  } from 'ion2-calendar';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { RecoveryPage } from '../pages/recovery/recovery';
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
+    CalendarModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
